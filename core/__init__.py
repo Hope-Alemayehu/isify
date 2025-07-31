@@ -1,4 +1,4 @@
-"""Core functionality for Ising model and QUBO problem definitions."""
+"""Core module for quantum optimization problems."""
 
 from .base import Hamiltonian
 from . import utils

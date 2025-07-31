@@ -7,13 +7,13 @@ class Hamiltonian:
 
         #validate h_terms
         for i, h_i in h_terms.items():
-            if not isinstance(i,int) or not isinstance(h_i, float):
-                raise ValueError(f"h_terms must be{int: float}, got {type(i): {type(h_i)}}")
+            if not isinstance(i, int) or not isinstance(h_i, float):
+                raise ValueError(f"h_terms must be dict[int, float], got dict[{type(i).__name__}, {type(h_i).__name__}]")
 
         #validate J_terms
-        for (i,j), J_ij in J_terms.items():
-            if not (isinstance(i,int) and isinstance(j,int) and isinstance(J_ij, float)):
-                raise ValueError(f"J_terms must be {(int,int): float}, got {type(i), type(j): {type(J_ij)}}")
+        for (i, j), J_ij in J_terms.items():
+            if not (isinstance(i, int) and isinstance(j, int) and isinstance(J_ij, float)):
+                raise ValueError(f"J_terms must be dict[tuple[int, int], float], got dict[tuple[{type(i).__name__}, {type(j).__name__}], {type(J_ij).__name__}]")
           
         self.h = h_terms
         self.J = J_terms
